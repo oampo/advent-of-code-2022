@@ -6,7 +6,7 @@ export async function readInput(
   filename = "input.txt"
 ): Promise<string> {
   const input = await fs.readFile(path.join(directory, filename), "utf-8");
-  return input.trim();
+  return input.replace(/\n$/, "");
 }
 
 export function groupLines<T>(lines: T[]) {
